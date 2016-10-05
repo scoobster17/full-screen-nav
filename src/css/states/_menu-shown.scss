@@ -1,0 +1,11 @@
+.menu-shown {
+    .show-menu {
+        display:none;
+    }
+    .hide-menu {
+        display:block;
+    }
+    main {
+        transition:margin-top 1s ease;
+    }
+}

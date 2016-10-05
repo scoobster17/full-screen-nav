@@ -9,19 +9,19 @@
     <div id="container" class="container">
         <header class="global-header">
             <nav>
-                <ul>
-                    <li>
+                <ul class="menu-toggle">
+                    <li class="show-menu">
                         <a href="#global-nav">
                             Show navigation menu
                         </a>
                     </li>
-                    <li>
+                    <li class="hide-menu">
                         <a href="#main-content">
                             Close navigation menu and go to main content
                         </a>
                     </li>
                 </ul>
-                <ul id="global-nav">
+                <ul id="global-nav" class="global-nav">
                     <li>
                         <a href="/page1.html">
                             Page 1
@@ -70,5 +70,15 @@
             </section>
         </main>
     </div>
+    <!-- Until ES2015 compatible -->
+    <script type="text/javascript" src="./node_modules/joose-utils/js/joose-utils.min.js"></script>
+    <script type="text/javascript" src="./src/js/joose-navigation-full-screen.js"></script>
+    <script type="text/javascript">
+        joose.navigation.fullScreen.init(
+            document.querySelectorAll('.menu-toggle a'),
+            document.querySelector('.container'),
+            document.querySelector('main')
+        );
+    </script>
 </body>
 </html>

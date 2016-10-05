@@ -1,5 +1,18 @@
 .global-header {
-    background: yellow;
-    min-height:100%;
-    padding: 0 3em;
+    .menu-toggle {
+        position:fixed;
+        text-align:center;
+        top:0;
+        width:100%;
+    }
+    .global-nav {
+        background: yellow;
+        min-height:100%;
+        overflow:auto;
+        padding: 3em;
+        position:fixed;
+        top:0;
+        width:100%;
+        z-index:-1;
+    }
 }
