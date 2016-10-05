@@ -37,6 +37,21 @@
                             Page 3
                         </a>
                     </li>
+                    <li>
+                        <section>
+                            <h2>Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eiuro, inquit adridens, iniquum, hac quidem de re; Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers? Quod cum dixissent, ille contra. Quamquam tu hanc copiosiorem etiam soles dicere. At quicum ioca seria, ut dicitur, quicum arcana, quicum occulta omnia? Atque his de rebus et splendida est eorum et illustris oratio. Nec vero sum nescius esse utilitatem in historia, non modo voluptatem. </p>
+                            <p>Satis est tibi in te, satis in legibus, satis in mediocribus amicitiis praesidii. Gerendus est mos, modo recte sentiat. Aliter autem vobis placet. Quae in controversiam veniunt, de iis, si placet, disseramus. Neque enim civitas in seditione beata esse potest nec in discordia dominorum domus; Quod autem satis est, eo quicquid accessit, nimium est; Saepe ab Aristotele, a Theophrasto mirabiliter est laudata per se ipsa rerum scientia; Quae cum ita sint, effectum est nihil esse malum, quod turpe non sit. </p>
+                            <p>Sed mehercule pergrata mihi oratio tua. Ecce aliud simile dissimile. Sed quid attinet de rebus tam apertis plura requirere? Nec vero sum nescius esse utilitatem in historia, non modo voluptatem. </p>
+                            <p>Legimus tamen Diogenem, Antipatrum, Mnesarchum, Panaetium, multos alios in primisque familiarem nostrum Posidonium. Sed mehercule pergrata mihi oratio tua. Non quaero, quid dicat, sed quid convenienter possit rationi et sententiae suae dicere. Ut aliquid scire se gaudeant? Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit. Istam voluptatem perpetuam quis potest praestare sapienti? </p>
+                            <p>Eaedem res maneant alio modo. Hoc dictum in una re latissime patet, ut in omnibus factis re, non teste moveamur. Non modo carum sibi quemque, verum etiam vehementer carum esse? Maximas vero virtutes iacere omnis necesse est voluptate dominante. Theophrasti igitur, inquit, tibi liber ille placet de beata vita? </p>
+                            <p>Inde igitur, inquit, ordiendum est. Morbo gravissimo affectus, exul, orbus, egens, torqueatur eculeo: quem hunc appellas, Zeno? Respondent extrema primis, media utrisque, omnia omnibus. An vero, inquit, quisquam potest probare, quod perceptfum, quod. Recte, inquit, intellegis. Illum mallem levares, quo optimum atque humanissimum virum, Cn. </p>
+                            <p>Ergo illi intellegunt quid Epicurus dicat, ego non intellego? Cyrenaici quidem non recusant; Sed haec quidem liberius ab eo dicuntur et saepius. Quod, inquit, quamquam voluptatibus quibusdam est saepe iucundius, tamen expetitur propter voluptatem. At iam decimum annum in spelunca iacet. </p>
+                            <p>Quodsi ipsam honestatem undique pertectam atque absolutam. Nec enim, dum metuit, iustus est, et certe, si metuere destiterit, non erit; Ex quo, id quod omnes expetunt, beate vivendi ratio inveniri et comparari potest. Illa tamen simplicia, vestra versuta. Claudii libidini, qui tum erat summo ne imperio, dederetur. Nam his libris eum malo quam reliquo ornatu villae delectari. </p>
+                            <p>Sed ad haec, nisi molestum est, habeo quae velim. Quis enim est, qui non videat haec esse in natura rerum tria? Aliter enim nosmet ipsos nosse non possumus. Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Sed eum qui audiebant, quoad poterant, defendebant sententiam suam. Falli igitur possumus. Nam Pyrrho, Aristo, Erillus iam diu abiecti. Eam si varietatem diceres, intellegerem, ut etiam non dicente te intellego; </p>
+                            <p>Duo Reges: constructio interrete. Quasi ego id curem, quid ille aiat aut neget. Non laboro, inquit, de nomine. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; </p>
+                        </section>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -74,10 +89,13 @@
     <script type="text/javascript" src="./node_modules/joose-utils/js/joose-utils.min.js"></script>
     <script type="text/javascript" src="./src/js/joose-navigation-full-screen.js"></script>
     <script type="text/javascript">
+        var pageContentElement = document.querySelector('main');
         joose.navigation.fullScreen.init(
+            document.querySelector('.global-nav'),
             document.querySelectorAll('.menu-toggle a'),
             document.querySelector('.container'),
-            document.querySelector('main')
+            pageContentElement,
+            parseInt(window.getComputedStyle(pageContentElement).transitionDuration)
         );
     </script>
 </body>

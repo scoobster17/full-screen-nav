@@ -15,10 +15,17 @@ joose.navigation.fullScreen = (function(joose) {
     };
 
     // private functions
-    var toggleNav = function(parentElement, pageContentElement) {
+    var toggleNav = function(globalNav, parentElement, pageContentElement, delay) {
         if (joose.utils.hasClass(parentElement, config.menuShownClass)) {
             joose.utils.removeClass(parentElement, config.menuShownClass);
             pageContentElement.style.removeProperty('top');
+            console.log(delay)
+            setTimeout(
+                function() {
+                    globalNav.scrollTop = 0;
+                },
+                (delay * 1000) + 10
+            )
         } else {
             joose.utils.addClass(parentElement, config.menuShownClass);
             pageContentElement.style.top = window.innerHeight + 'px';
@@ -26,11 +33,11 @@ joose.navigation.fullScreen = (function(joose) {
     }
 
     // initialise toggle links
-    var init = function (menuToggleLinks, parentElement, pageContentElement) {
+    var init = function (globalNav, menuToggleLinks, parentElement, pageContentElement, delay) {
         menuToggleLinks.forEach(function(link) {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
-                toggleNav(parentElement, pageContentElement);
+                toggleNav(globalNav, parentElement, pageContentElement, delay);
             });
         });
     }
