@@ -18,10 +18,10 @@ joose.navigation.fullScreen = (function(joose) {
     var toggleNav = function(parentElement, pageContentElement) {
         if (joose.utils.hasClass(parentElement, config.menuShownClass)) {
             joose.utils.removeClass(parentElement, config.menuShownClass);
-            pageContentElement.style.removeProperty('margin-top');
+            pageContentElement.style.removeProperty('top');
         } else {
             joose.utils.addClass(parentElement, config.menuShownClass);
-            pageContentElement.style.marginTop = window.innerHeight + 'px';
+            pageContentElement.style.top = window.innerHeight + 'px';
         }
     }
 
@@ -29,7 +29,6 @@ joose.navigation.fullScreen = (function(joose) {
     var init = function (menuToggleLinks, parentElement, pageContentElement) {
         menuToggleLinks.forEach(function(link) {
             link.addEventListener('click', function(event) {
-                console.log(event)
                 event.preventDefault();
                 toggleNav(parentElement, pageContentElement);
             });
