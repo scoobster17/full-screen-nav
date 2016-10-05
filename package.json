@@ -1,0 +1,34 @@
+{
+  "name": "joose-navigation-full-screen",
+  "version": "1.0.0",
+  "description": "Joose Full Screen navigation component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scoobster17/joose-navigation-full-screen.git"
+  },
+  "keywords": [
+    "Joose",
+    "Fullscreen",
+    "Full",
+    "Screen",
+    "Navigation"
+  ],
+  "author": "Phil Gibbins <scoobster17@hotmail.co.uk> (http://www.philgibbins.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scoobster17/joose-navigation-full-screen/issues"
+  },
+  "homepage": "https://github.com/scoobster17/joose-navigation-full-screen#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.10",
+    "joose-utils": "^1.0.1",
+    "reset-css": "^2.2.0"
+  }
+}
