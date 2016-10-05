@@ -1,39 +1,39 @@
 body {
-    background:yellow;
-    height:100%;
+    background: yellow;
     font-family: Arial, sans-serif;
+    height: 100%;
     position: absolute;
-    width:100%;
+    width: 100%;
 }
 .container {
-    height:100%;
-    overflow:hidden;
+    height: 100%;
+    overflow: hidden;
     position: absolute;
-    width:100%;
+    width: 100%;
 }
 main {
-    background:white;
-    top:0;
-    height:100%;
-    overflow:auto;
+    background: white;
+    height: 100%;
+    overflow: auto;
     position: absolute;
-    transition:top 1s ease;
-    width:100%;
-    z-index:1;
+    top: 0;
+    transition: top 1s ease;
+    width: 100%;
+    z-index: 1;
 }
 section {
-    margin:3em;
+    margin: 3em;
 }
 h1 {
-    font-size:2.4em;
-    margin:0 0 .5em;
+    font-size: 2.4em;
+    margin: 0 0 .5em;
 }
 h2 {
-    font-size:1.8em;
+    font-size: 1.8em;
     margin: 0 0 .5em;
 }
 p {
-    max-width:39em;
+    max-width: 39em;
     + p {
         margin-top: 1em;
     }

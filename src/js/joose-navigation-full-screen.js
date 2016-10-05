@@ -2,12 +2,11 @@
 
 // import joose-utils once is es2015 compatible
 
-;
+;"use strict";
+
 var joose = window.joose || {};
 joose.navigation = window.joose.navigation || {};
 joose.navigation.fullScreen = (function(joose) {
-
-    "use strict";
 
     // shared configuration / variables
     var config = {

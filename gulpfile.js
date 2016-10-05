@@ -24,7 +24,10 @@ var sass = require('gulp-sass');
 // var eslint = require('gulp-eslint');
 
 // compilation utilities
+var csscomb = require('gulp-csscomb');
 var sourcemaps = require('gulp-sourcemaps');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('gulp-autoprefixer');
 // var concat = require('gulp-concat');
 // var browserify = require('browserify');
 
@@ -49,10 +52,20 @@ var fileExtensions = {
     sass: '.scss',
     js: '.js'
 }
+var supportedBrowsersList = [
+    'last 2 versions', // the last 2 versions for each major browser
+    'IE >= 9'
+];
 
 /* ************************************************************************** */
 
 /* CSS */
+
+gulp.task('csscomb', function () {
+    gulp.src( directories.cssSrc + allFilesInAllFolders + fileExtensions.sass , {base: './'})
+    .pipe(csscomb())
+    .pipe(gulp.dest('./'));
+});
 
 /**
  * Task to compile Sass
@@ -69,6 +82,13 @@ gulp.task('sass', function() {
             })
             .on('error', sass.logError)
         )
+        .pipe(postcss(
+            [
+                autoprefixer({
+                    browsers: supportedBrowsersList
+                })
+            ]
+        ))
         .pipe( sourcemaps.write() )
         .pipe( gulp.dest( directories.cssDist ) );
 });

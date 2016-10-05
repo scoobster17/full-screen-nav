@@ -1,11 +1,11 @@
 .menu-shown {
     .show-menu {
-        display:none;
+        display: none;
     }
     .hide-menu {
-        display:block;
+        display: block;
     }
     main {
-        transition:top 1s ease;
+        transition: top 1s ease;
     }
 }
