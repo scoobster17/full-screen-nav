@@ -27,7 +27,7 @@ var sass = require('gulp-sass');
 var csscomb = require('gulp-csscomb');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
-var autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 // var concat = require('gulp-concat');
 // var browserify = require('browserify');
 
@@ -62,15 +62,18 @@ var supportedBrowsersList = [
 /* CSS */
 
 gulp.task('csscomb', function () {
-    gulp.src( directories.cssSrc + allFilesInAllFolders + fileExtensions.sass , {base: './'})
-    .pipe(csscomb())
-    .pipe(gulp.dest('./'));
+    gulp.src(
+        directories.cssSrc + allFilesInAllFolders + fileExtensions.sass,
+        {base: './'}
+    )
+    .pipe( csscomb() )
+    .pipe( gulp.dest('./') );
 });
 
 /**
  * Task to compile Sass
  */
-gulp.task('sass', function() {
+gulp.task('sass', [], function() {
     return gulp.src( directories.cssSrc + allFilesInAllFolders + fileExtensions.sass )
         .pipe( sourcemaps.init() )
         .pipe(
