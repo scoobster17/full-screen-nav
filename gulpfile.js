@@ -34,6 +34,8 @@ var autoprefixer = require('autoprefixer');
 // helpers
 var watch = require('gulp-watch');
 
+var shell = require('gulp-shell');
+
 /* ************************************************************************** */
 
 /* Variables */
@@ -73,7 +75,7 @@ gulp.task('csscomb', function () {
 /**
  * Task to compile Sass
  */
-gulp.task('sass', [], function() {
+gulp.task('sass', ['csscomb'], function() {
     return gulp.src( directories.cssSrc + allFilesInAllFolders + fileExtensions.sass )
         .pipe( sourcemaps.init() )
         .pipe(
@@ -125,15 +127,16 @@ gulp.task('eslint', function() {
 /**
  * Task to watch for changes in files and trigger events
  */
-gulp.task('watch', function() {
+gulp.task('start-watch', function() {
 
     // watch for css changes
-    watch(
+    var y = watch(
         [
             directories.cssSrc + allFilesInAllFolders + fileExtensions.sass
         ],
         function() {
-            gulp.start('sass');
+            y.unwatch(directories.cssSrc + allFilesInAllFolders + fileExtensions.sass)
+            gulp.start('watch');
         }
     );
 
@@ -143,5 +146,9 @@ gulp.task('watch', function() {
     });*/
 
 });
+
+gulp.task('watch', ['sass'], shell.task([
+    'gulp start-watch'
+]))
 
 /* ************************************************************************** */
